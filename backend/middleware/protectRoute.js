@@ -1,4 +1,5 @@
 import User from "../models/user.model.js";
+import jwt from "jsonwebtoken";
 
 export const protectRoute = async (req, res, next) => {
   try {
@@ -15,7 +16,7 @@ export const protectRoute = async (req, res, next) => {
     const user = await User.findById(decoded.userId).select("-password");
 
     if (!user) {
-      return res.status(404).json({ error: " User Not Found " });
+      return res.status(404).json({ error: " User Not Found" });
     }
 
     req.user = user;

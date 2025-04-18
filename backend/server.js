@@ -18,6 +18,7 @@ app.use(express.urlencoded({ extended: true })); // to parse urlencoded data
 
 app.use(cookieParser()); // to parse cookies
 
+//Route middleware
 app.use("/api/auth", authRoutes);
 
 app.listen(PORT, () => {

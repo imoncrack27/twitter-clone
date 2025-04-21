@@ -145,7 +145,7 @@ export const updateUser = async (req, res) => {
     if (coverImg) {
       if (user.coverImg) {
         await cloudinary.uploader.destroy(
-          user.coverImg.split("/").pop().split(".")[0]
+          user.coverImg.split("/").pop().split(".")[0] // this deletes the image
         );
       }
 

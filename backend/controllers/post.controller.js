@@ -128,7 +128,10 @@ export const likeUnlikePost = async (req, res) => {
 
 export const getAllPosts = async (req, res) => {
   try {
-    const posts = await Post.find().sort({ createdAt: -1 });
+    const posts = await Post.find().sort({ createdAt: -1 }).populate({
+      path: "user",
+      select: "-password",
+    });
 
     if (posts.length === 0) {
       return res.status(200).json([]);

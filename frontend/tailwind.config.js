@@ -9,7 +9,7 @@ export default {
   plugins: [daisyui],
   daisyui: {
     themes: [
-      "light",
+      "dark",
       {
         black: {
           primary: "rgb(29, 155, 240)",

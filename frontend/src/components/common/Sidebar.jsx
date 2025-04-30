@@ -9,12 +9,7 @@ import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 
 const Sidebar = () => {
-  const {
-    mutate: logout,
-    isError,
-    isPending,
-    error,
-  } = useMutation({
+  const { mutate: logout } = useMutation({
     mutationFn: async () => {
       try {
         const res = await fetch("/api/auth/logout", {
@@ -33,6 +28,9 @@ const Sidebar = () => {
     onSuccess: () => {
       toast.success("Logout successfully!");
       // Handle successful logout
+    },
+    onError: () => {
+      toast.error("Failed to logout");
     },
   });
 

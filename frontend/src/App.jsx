@@ -16,6 +16,7 @@ import LoadingSpinner from "./components/common/LoadingSpinner";
 
 function App() {
   const { data: authUser, isLoading } = useQuery({
+    // we use queryKey to give a unique name to our query and refer to it later
     queryKey: ["authUser"],
     queryFn: async () => {
       try {
@@ -30,6 +31,7 @@ function App() {
         throw new Error(error);
       }
     },
+    retry: false,
   });
 
   if (isLoading) {

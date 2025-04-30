@@ -46,7 +46,7 @@ function App() {
   return (
     <div className="flex max-w-6xl mx-auto">
       {/* Common component,bc it's not wrapped with Routes */}
-      <Sidebar />
+      {authUser && <Sidebar />}
       <Routes>
         <Route
           path="/"
@@ -69,7 +69,7 @@ function App() {
           element={authUser ? <ProfilePage /> : <Navigate to="/login" />}
         />
       </Routes>
-      <RightPanel />
+      {authUser && <RightPanel />}
       <Toaster />
     </div>
   );

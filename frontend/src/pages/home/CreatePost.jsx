@@ -13,15 +13,20 @@ const CreatePost = () => {
   const { data: authUser } = useQuery({ queryKey: ["authUser"] });
   const queryClient = useQueryClient();
 
-  const { mutate: createPost, isPending } = useMutation({
-    mutationFn: async (text, image) => {
+  const {
+    mutate: createPost,
+    isPending,
+    isError,
+    error,
+  } = useMutation({
+    mutationFn: async (text, img) => {
       try {
         const res = await fetch("/api/posts/create", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ text, img }),
+          body: JSON.stringify(text, img),
         });
         const data = await res.json();
 
@@ -61,7 +66,7 @@ const CreatePost = () => {
     <div className="flex p-4 items-start gap-4 border-b border-gray-700">
       <div className="avatar">
         <div className="w-8 rounded-full">
-          <img alt="" src={data.profileImg || "/avatar-placeholder.png"} />
+          <img alt="" src={authUser.profileImg || "/avatar-placeholder.png"} />
         </div>
       </div>
       <form className="flex flex-col gap-2 w-full" onSubmit={handleSubmit}>
@@ -101,7 +106,7 @@ const CreatePost = () => {
             {isPending ? "Posting..." : "Post"}
           </button>
         </div>
-        {isError && <div className="text-red-500">Something went wrong</div>}
+        {isError && <div className="text-red-500">{error.message}</div>}
       </form>
     </div>
   );

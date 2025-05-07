@@ -1,8 +1,8 @@
-### 🐦 Twitter Clone
+# 🐦 Twitter Clone
 
 A full-featured Twitter clone built using the MERN stack with image uploads, user authentication, notifications, and much more
 
-### 🚀 Features
+# 🚀 Features
 
 ⚛️ Tech Stack: React.js, Node.js, Express, MongoDB, Tailwind CSS
 
@@ -24,28 +24,34 @@ A full-featured Twitter clone built using the MERN stack with image uploads, use
 
 ⏳ More coming soon...
 
-### Setup
+# Setup
 
 📄 Environment Variables
 Create a .env file in the root directory and add the following:
 
-MONGO_URI=your_mongodb_connection_string
-PORT=your_port_number
-JWT_SECRET=your_jwt_secret
-NODE_ENV=development_or_production
-CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
-CLOUDINARY_API_KEY=your_cloudinary_api_key
-CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+```js
+MONGO_URI=...
+PORT=...
+JWT_SECRET=...
+NODE_ENV=...
+CLOUDINARY_CLOUD_NAME=...
+CLOUDINARY_API_KEY=...
+CLOUDINARY_API_SECRET=...
+```
 
-### 🧱 Build the App
+# 🧱 Build the App
 
+```shell
 npm run build
+```
 
-### ▶️ Start the App
+# ▶️ Start the App
 
+```shell
 npm start
+```
 
-### 📚 Credits
+# 📚 Credits
 
 This project is based on a tutorial by burakorkmez.
 Original source code is licensed under the MIT License.

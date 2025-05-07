@@ -9,8 +9,6 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-hot-toast";
 
 import LoadingSpinner from "./LoadingSpinner";
-import { query } from "express-validator";
-import { set } from "mongoose";
 import { formatPostDate } from "../../utils/date";
 
 const Post = ({ post }) => {
